@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZangFu Educação</title>
+
+<!-- FAVICON (logo Escola ZangFu, embutido diretamente no HTML) -->
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="theme-color" content="#000000">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --azul: #20315F;
+    --laranja: #F6960F;
+    --amarelo: #F8D138;
+    --branco: #FFFFFF;
+    --azul-escuro: #16234A;
+    --azul-medio: #2A4080;
+    --texto-claro: #D0D8EE;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--azul);
+    color: var(--branco);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(22, 35, 74, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--laranja);
+    padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; font-size: 1.3rem; color: var(--branco);
+    text-decoration: none;
+  }
+  .nav-logo .yin-yang-mini {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: conic-gradient(#fff 0deg 180deg, #111 180deg 360deg);
+    position: relative; flex-shrink: 0;
+    border: 2px solid var(--laranja);
+    animation: spinSlow 8s linear infinite;
+  }
+  @keyframes spinSlow { to { transform: rotate(360deg); } }
+  .nav-logo span { color: var(--amarelo); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: var(--texto-claro); text-decoration: none;
+    font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--amarelo); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 100px 40px 60px;
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul) 50%, #1a2d5a 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(246,150,15,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -80px; left: -80px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(248,209,56,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content {
+    max-width: 700px; text-align: center; position: relative; z-index: 1;
+  }
+  .hero-yin-yang {
+    width: 130px; height: 130px; margin: 0 auto 32px;
+    position: relative;
+  }
+  .yin-yang-svg { width: 100%; height: 100%; animation: spinSlow 12s linear infinite; filter: drop-shadow(0 0 20px rgba(246,150,15,0.4)); }
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--laranja);
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 900; line-height: 1.08;
+    color: var(--branco); margin-bottom: 10px;
+  }
+  .hero-title .highlight { color: var(--amarelo); }
+  .hero-subtitle {
+    font-size: 1.1rem; color: var(--texto-claro);
+    line-height: 1.7; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto;
+  }
+  .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--laranja), #e08000);
+    color: #fff; padding: 15px 32px;
+    border: none; border-radius: 50px; cursor: pointer;
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(246,150,15,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(246,150,15,0.5); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--branco); padding: 15px 32px;
+    border: 2px solid rgba(255,255,255,0.3); border-radius: 50px; cursor: pointer;
+    font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--amarelo); color: var(--amarelo); }
+
+  /* SOBRE */
+  .sobre {
+    background: var(--azul-escuro);
+    padding: 90px 40px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--laranja);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 900; color: var(--branco);
+    margin-bottom: 24px; line-height: 1.2;
+  }
+  .section-title .accent { color: var(--amarelo); }
+  .sobre-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .sobre-text p {
+    color: var(--texto-claro); line-height: 1.85; margin-bottom: 18px; font-size: 0.97rem;
+  }
+  .pilares {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 10px;
+  }
+  .pilar {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(246,150,15,0.2);
+    border-radius: 12px; padding: 20px 18px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .pilar:hover { border-color: var(--laranja); background: rgba(246,150,15,0.08); }
+  .pilar-icon { font-size: 1.6rem; margin-bottom: 8px; }
+  .pilar-nome {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem; font-weight: 700; color: var(--amarelo);
+    margin-bottom: 6px;
+  }
+  .pilar-desc { font-size: 0.82rem; color: var(--texto-claro); line-height: 1.5; }
+
+  /* CURSOS */
+  .cursos { padding: 90px 40px; background: var(--azul); }
+  .cursos-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px; margin-top: 48px;
+  }
+  .curso-card {
+    background: var(--azul-escuro);
+    border: 1px solid rgba(248,209,56,0.15);
+    border-radius: 16px; padding: 28px 24px;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .curso-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--laranja), var(--amarelo));
+    opacity: 0; transition: opacity 0.25s;
+  }
+  .curso-card:hover { transform: translateY(-5px); border-color: rgba(248,209,56,0.4); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+  .curso-card:hover::before { opacity: 1; }
+  .curso-icone { font-size: 2.2rem; margin-bottom: 14px; }
+  .curso-nome {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem; font-weight: 800; color: var(--amarelo);
+    margin-bottom: 10px; line-height: 1.3;
+  }
+  .curso-desc { font-size: 0.87rem; color: var(--texto-claro); line-height: 1.6; margin-bottom: 18px; }
+  .curso-tag {
+    display: inline-block;
+    background: rgba(246,150,15,0.15); color: var(--laranja);
+    border: 1px solid rgba(246,150,15,0.3);
+    font-size: 0.72rem; font-weight: 700; font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px;
+  }
+
+  /* CONTATO */
+  .contato { padding: 90px 40px; background: var(--azul-escuro); }
+  .contato-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+    margin-top: 48px;
+  }
+  .contato-info-lista { display: flex; flex-direction: column; gap: 20px; }
+  .contato-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 18px 20px;
+    transition: border-color 0.2s;
+  }
+  .contato-item:hover { border-color: rgba(246,150,15,0.3); }
+  .contato-icone {
+    font-size: 1.4rem; flex-shrink: 0;
+    width: 44px; height: 44px;
+    background: rgba(246,150,15,0.12);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  }
+  .contato-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem; font-weight: 700; color: var(--laranja);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;
+  }
+  .contato-valor { font-size: 0.92rem; color: var(--texto-claro); line-height: 1.5; }
+
+  .contato-cta-box {
+    background: linear-gradient(135deg, rgba(246,150,15,0.12), rgba(248,209,56,0.06));
+    border: 1px solid rgba(246,150,15,0.3);
+    border-radius: 20px; padding: 40px 36px;
+    text-align: center;
+  }
+  .contato-cta-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem; font-weight: 900; color: var(--branco);
+    margin-bottom: 12px;
+  }
+  .contato-cta-box p { color: var(--texto-claro); font-size: 0.92rem; line-height: 1.65; margin-bottom: 28px; }
+  .btn-whatsapp {
+    background: #25D366; color: #fff;
+    padding: 16px 32px; border-radius: 50px;
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+  }
+  .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.45); }
+  .redes-sociais { display: flex; justify-content: center; gap: 16px; margin-top: 24px; }
+  .rede-btn {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+    color: var(--texto-claro); padding: 10px 20px; border-radius: 50px;
+    text-decoration: none; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; font-weight: 600;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .rede-btn:hover { border-color: var(--laranja); color: var(--laranja); }
+
+  /* FOOTER */
+  footer {
+    background: #0e1a35; padding: 32px 40px;
+    text-align: center; border-top: 1px solid rgba(246,150,15,0.2);
+  }
+  footer p { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+  footer span { color: var(--laranja); }
+
+  /* WHATSAPP FLUTUANTE */
+  .whatsapp-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: #25D366;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+    text-decoration: none; font-size: 1.6rem;
+    animation: pulse-wa 2.5s infinite;
+    transition: transform 0.2s;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+  @keyframes pulse-wa {
+    0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
+    50% { box-shadow: 0 6px 36px rgba(37,211,102,0.75), 0 0 0 8px rgba(37,211,102,0.1); }
+  }
+
+  /* DIVISOR */
+  .divisor {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--laranja), var(--amarelo), transparent);
+    opacity: 0.3; margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 90px 24px 50px; }
+    .sobre, .cursos, .contato { padding: 60px 24px; }
+    .sobre-grid, .contato-grid { grid-template-columns: 1fr; gap: 40px; }
+    .pilares { grid-template-columns: 1fr; }
+    footer { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="yin-yang-mini"></div>
+    ZangFu <span>&nbsp;Educação</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cursos">Cursos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-yin-yang">
+      <svg class="yin-yang-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="left-half"><rect x="0" y="0" width="100" height="200"/></clipPath>
+          <clipPath id="right-half"><rect x="100" y="0" width="100" height="200"/></clipPath>
+        </defs>
+        <circle cx="100" cy="100" r="98" fill="#fff" clip-path="url(#left-half)"/>
+        <circle cx="100" cy="100" r="98" fill="#111" clip-path="url(#right-half)"/>
+        <circle cx="100" cy="51" r="49" fill="#fff"/>
+        <circle cx="100" cy="149" r="49" fill="#111"/>
+        <circle cx="100" cy="51" r="14" fill="#111"/>
+        <circle cx="100" cy="149" r="14" fill="#fff"/>
+        <circle cx="100" cy="100" r="97" fill="none" stroke="#F6960F" stroke-width="3"/>
+      </svg>
+    </div>
+    <p class="hero-eyebrow">Educação com equilíbrio e propósito</p>
+    <h1 class="hero-title">
+      Transforme seu futuro com a<br>
+      <span class="highlight">ZangFu Educação</span>
+    </h1>
+    <p class="hero-subtitle">
+      Cursos reconhecidos, metodologia humanizada e compromisso com o seu crescimento.
+      Da formação básica à pós-graduação, estamos com você em cada etapa.
+    </p>
+    <div class="hero-ctas">
+      <a href="#cursos" class="btn-primary">🎓 Ver nossos cursos</a>
+      <a href="#contato" class="btn-secondary">📞 Fale conosco</a>
+    </div>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <p class="section-label">Quem somos</p>
+        <h2 class="section-title">Educação que <span class="accent">equilibra</span> tradição e inovação</h2>
+        <p>A ZangFu Educação é uma instituição comprometida com a formação integral dos seus alunos. Nosso nome é inspirado no sistema Zang-Fu da medicina tradicional chinesa — a harmonia entre órgãos e funções que sustentam o ser humano. Assim como nessa filosofia, acreditamos que o verdadeiro aprendizado nasce do equilíbrio.</p>
+        <p>Oferecemos desde programas de Educação de Jovens e Adultos (EJA) até pós-graduação em Acupuntura, sempre com foco na qualidade, acessibilidade e no desenvolvimento humano dos nossos estudantes.</p>
+      </div>
+      <div class="pilares">
+        <div class="pilar">
+          <div class="pilar-icon">🎯</div>
+          <div class="pilar-nome">Foco no Aluno</div>
+          <div class="pilar-desc">Metodologia centrada nas necessidades reais de cada estudante.</div>
+        </div>
+        <div class="pilar">
+          <div class="pilar-icon">📜</div>
+          <div class="pilar-nome">Certificação</div>
+          <div class="pilar-desc">Diplomas e certificados reconhecidos para alavancar sua carreira.</div>
+        </div>
+        <div class="pilar">
+          <div class="pilar-icon">🌿</div>
+          <div class="pilar-nome">Visão Holística</div>
+          <div class="pilar-desc">Educação que integra saberes tradicionais e contemporâneos.</div>
+        </div>
+        <div class="pilar">
+          <div class="pilar-icon">🤝</div>
+          <div class="pilar-nome">Suporte Real</div>
+          <div class="pilar-desc">Acompanhamento próximo do início ao fim da sua formação.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<!-- CURSOS -->
+<section class="cursos" id="cursos">
+  <div class="container">
+    <p class="section-label">O que oferecemos</p>
+    <h2 class="section-title">Nossos <span class="accent">Cursos</span></h2>
+    <div class="cursos-grid">
+
+      <div class="curso-card">
+        <div class="curso-icone">📚</div>
+        <div class="curso-nome">EJA – Ensino Médio</div>
+        <div class="curso-desc">O Ensino de Jovens e Adultos é a sua oportunidade de concluir o Ensino Médio com qualidade, no seu ritmo. Ideal para quem precisou interromper os estudos e deseja retomar sua trajetória educacional com dignidade e suporte pedagógico completo.</div>
+        <span class="curso-tag">Educação Básica</span>
+      </div>
+
+      <div class="curso-card">
+        <div class="curso-icone">🏆</div>
+        <div class="curso-nome">Técnico por Competência</div>
+        <div class="curso-desc">Modalidade que certifica conhecimentos e habilidades já adquiridos na prática profissional. Você é avaliado pelo que sabe fazer — e recebe o diploma técnico correspondente. Uma solução ágil e eficiente para profissionalizar sua experiência.</div>
+        <span class="curso-tag">Formação Técnica</span>
+      </div>
+
+      <div class="curso-card">
+        <div class="curso-icone">🌐</div>
+        <div class="curso-nome">Cursos Livres de Extensão</div>
+        <div class="curso-desc">Amplie seus conhecimentos com cursos livres focados em áreas estratégicas e emergentes. Conteúdos atualizados, carga horária flexível e certificado de conclusão para enriquecer seu currículo e ampliar suas possibilidades profissionais.</div>
+        <span class="curso-tag">Extensão</span>
+      </div>
+
+      <div class="curso-card">
+        <div class="curso-icone">🌿</div>
+        <div class="curso-nome">Pós-Graduação em Acupuntura</div>
+        <div class="curso-desc">Curso presencial voltado para profissionais graduados na área da saúde. Aprofunde-se na medicina tradicional chinesa, com formação sólida em Acupuntura que alia teoria, prática clínica e embasamento científico para transformar sua atuação profissional.</div>
+        <span class="curso-tag">Pós-Graduação · Presencial</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="container">
+    <p class="section-label">Fale com a gente</p>
+    <h2 class="section-title">Entre em <span class="accent">Contato</span></h2>
+    <div class="contato-grid">
+      <div class="contato-info-lista">
+        <div class="contato-item">
+          <div class="contato-icone">📱</div>
+          <div>
+            <div class="contato-label">WhatsApp / Celular</div>
+            <div class="contato-valor">(21) 97374-5189</div>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="contato-icone">☎️</div>
+          <div>
+            <div class="contato-label">Telefone Fixo</div>
+            <div class="contato-valor">(21) 3335-9693</div>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="contato-icone">📍</div>
+          <div>
+            <div class="contato-label">Endereço</div>
+            <div class="contato-valor">Rua Francisco Real, 519<br>Padre Miguel – Rio de Janeiro / RJ</div>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="contato-icone">📸</div>
+          <div>
+            <div class="contato-label">Instagram</div>
+            <div class="contato-valor">@seudiplomaagora<br>@escolazangfuacupuntura</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contato-cta-box">
+        <h3>Pronto para começar?</h3>
+        <p>Tire suas dúvidas, saiba mais sobre nossos cursos ou faça sua matrícula. Nossa equipe está pronta para te atender e orientar no melhor caminho para a sua formação.</p>
+        <a href="https://wa.me/5521973745189?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20da%20ZangFu%20Educa%C3%A7%C3%A3o." class="btn-whatsapp" target="_blank">
+          💬 Falar pelo WhatsApp
+        </a>
+        <div class="redes-sociais">
+          <a href="https://instagram.com/seudiplomaagora" class="rede-btn" target="_blank">📸 Instagram</a>
+          <a href="https://instagram.com/escolazangfuacupuntura" class="rede-btn" target="_blank">📸 @escolazangfuacupuntura</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>ZangFu Educação</span>. Todos os direitos reservados.<br>
+  Rua Francisco Real, 519 — Padre Miguel, Rio de Janeiro / RJ</p>
+</footer>
+
+<!-- BOTÃO WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5521973745189?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20da%20ZangFu%20Educa%C3%A7%C3%A3o." class="whatsapp-float" target="_blank" title="Falar pelo WhatsApp">
+  💬
+</a>
+
+</body>
+</html>
